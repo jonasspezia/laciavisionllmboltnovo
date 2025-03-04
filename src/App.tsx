@@ -1,30 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApiKeyProvider } from './context/ApiKeyContext';
-import HomePage from './pages/HomePage';
-import AnalysisPage from './pages/AnalysisPage';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Problem from './components/Problem';
+import Solution from './components/Solution';
+import Features from './components/Features';
+import Benefits from './components/Benefits';
+import UseCases from './components/UseCases';
+import CallToAction from './components/CallToAction';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <ApiKeyProvider>
-      <Router>
-        <div className="min-h-screen flex flex-col bg-gray-50">
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/upload" element={<AnalysisPage />} />
-            </Routes>
-          </main>
-          <footer className="bg-white py-6 border-t border-gray-200">
-            <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-              <p>Video Insight AI &copy; {new Date().getFullYear()} - Powered by Google Gemini 1.5</p>
-            </div>
-          </footer>
-        </div>
-      </Router>
-    </ApiKeyProvider>
+    <div className="min-h-screen font-sans">
+      <Header />
+      <main>
+        <Hero />
+        <Problem />
+        <Solution />
+        <Features />
+        <Benefits />
+        <UseCases />
+        <CallToAction />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
